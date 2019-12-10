@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ShowTextAttr
+Bundle-SymbolicName: ShowTextAttr;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.inosn7bc.showtextattr.decorators.Activator
+Bundle-Vendor: inosn7bc
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources;bundle-version="3.8.101"
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-ActivationPolicy: lazy
