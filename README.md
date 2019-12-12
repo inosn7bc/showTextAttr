@@ -1,4 +1,0 @@
-# showTextAttr
-
-hogefuga
-
