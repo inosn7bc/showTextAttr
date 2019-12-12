@@ -30,8 +30,6 @@ import org.mozilla.universalchardet.UniversalDetector;
 //import org.slf4j.LoggerFactory;
 //import org.slf4j.MDC;
 
-
-
 /**
  *
  * jdk 1.5 or greater
@@ -47,66 +45,64 @@ public class AttrDecorator implements ILabelDecorator {
 
 	static final Map<String, FileDefine> fileDefines = new HashMap<String, FileDefine>();
 
-	static{
-		fileDefines.put("*.txt",new FileDefine( "", ""));
-		fileDefines.put("*.log",new FileDefine( "", ""));
-		fileDefines.put("*.java",new FileDefine( "", ""));
-		fileDefines.put("*.conf",new FileDefine( "UTF-8", "LF"));
-		fileDefines.put("*.xml",new FileDefine( "", ""));
-		fileDefines.put("*.properties",new FileDefine( "", ""));
-		fileDefines.put("*.js",new FileDefine( "Shift-JIS", "CRLF"));
-		fileDefines.put("*.jsp",new FileDefine( "Shift-JIS", "CRLF"));
-		fileDefines.put("*.css",new FileDefine( "", ""));
-		fileDefines.put("*.inc",new FileDefine( "", ""));
-		fileDefines.put("*.tld",new FileDefine( "", ""));
-		fileDefines.put("*.vm",new FileDefine( "", ""));
-		fileDefines.put("*.sh",new FileDefine( "EUC-JP", "LF"));
-		fileDefines.put("*.bat",new FileDefine( "SHIFT-JIS", "CRLF"));
-		fileDefines.put("*.htm*",new FileDefine( "", ""));
-		fileDefines.put("*.sql",new FileDefine( "", ""));
+	static {
+		fileDefines.put("*.txt", new FileDefine("", ""));
+		fileDefines.put("*.log", new FileDefine("", ""));
+		fileDefines.put("*.java", new FileDefine("", ""));
+		fileDefines.put("*.conf", new FileDefine("UTF-8", "LF"));
+		fileDefines.put("*.xml", new FileDefine("", ""));
+		fileDefines.put("*.properties", new FileDefine("", ""));
+		fileDefines.put("*.js", new FileDefine("Shift-JIS", "CRLF"));
+		fileDefines.put("*.jsp", new FileDefine("Shift-JIS", "CRLF"));
+		fileDefines.put("*.css", new FileDefine("", ""));
+		fileDefines.put("*.inc", new FileDefine("", ""));
+		fileDefines.put("*.tld", new FileDefine("", ""));
+		fileDefines.put("*.vm", new FileDefine("", ""));
+		fileDefines.put("*.sh", new FileDefine("EUC-JP", "LF"));
+		fileDefines.put("*.bat", new FileDefine("SHIFT-JIS", "CRLF"));
+		fileDefines.put("*.htm*", new FileDefine("", ""));
+		fileDefines.put("*.sql", new FileDefine("", ""));
 
 		filter = new WildcardFileFilter(new ArrayList<String>(
 				fileDefines.keySet()), IOCase.INSENSITIVE);
- 	}
+	}
 
 	static final List<String> wildcards = Arrays.asList("*.txt", "*.log",
-			"*.java", "*.conf", "*.xml", "*.properties", "*.js", "*.jsp","*.css",
+			"*.java", "*.conf", "*.xml", "*.properties", "*.js", "*.jsp", "*.css",
 			"*.inc", "*.tld", "*.vm", "*.sh", "*.bat", "*.htm*", "*.sql");
 	static final WildcardFileFilter filter;
 
 	public Image decorateImage(Image image, Object element) {
 		long threadId = Thread.currentThread().getId();
 
-
-		LOGGER.info("decorateImage:"+threadId+":" + element);
+		LOGGER.info("decorateImage:" + threadId + ":" + element);
 
 		PaletteData paletteData = new PaletteData(200, 0, 0);
 
-//		ImageData imageData =		new ImageData(8, 8, 256, paletteData);
+		//		ImageData imageData =		new ImageData(8, 8, 256, paletteData);
 
 		try {
 
-//			java.io.File cur = new java.io.File(".");
-//			System.out.println(cur.getAbsolutePath());
-//
-//			java.io.File imageFile = new java.io.File(".\\image\\not.png");
-//
-//			ImageData imageData =		new ImageData(new FileInputStream(imageFile));
-//
-//			Image image2 = new Image(null, imageData);
+			//			java.io.File cur = new java.io.File(".");
+			//			System.out.println(cur.getAbsolutePath());
+			//
+			//			java.io.File imageFile = new java.io.File(".\\image\\not.png");
+			//
+			//			ImageData imageData =		new ImageData(new FileInputStream(imageFile));
+			//
+			//			Image image2 = new Image(null, imageData);
 
-//			Image image = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_FOLDER);
-//			Image image2 = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_DEC_FIELD_ERROR);
-//
-//TODO			return image2;
+			//			Image image = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_FOLDER);
+			//			Image image2 = PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_DEC_FIELD_ERROR);
+			//
+			//TODO			return image2;
 
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 
 		return image;
-    }
-
+	}
 
 	public String decorateText(String text, Object element) {
 
@@ -140,21 +136,20 @@ public class AttrDecorator implements ILabelDecorator {
 			long localTimeStamp = f.getLocalTimeStamp();
 
 			if (cacheMap.containsKey(location)) {
-				CacheValue cache= cacheMap.get(location);
+				CacheValue cache = cacheMap.get(location);
 				if (localTimeStamp == cache.timestamp) {
 					LOGGER.trace("キャッシュにヒット:" + fileName);
-					return text+cache.addText;
+					return text + cache.addText;
 				}
 			}
 
 			String cs;
 			String sep = "";
 
-	    	try {
+			try {
 				InputStream is = f.getContents();
 
 				cs = getCharsetName(is);
-
 
 				if ("UTF-8".equals(cs.toUpperCase())) {
 					//BOMを調べる
@@ -170,14 +165,14 @@ public class AttrDecorator implements ILabelDecorator {
 							// BOMなし
 						} else {
 							// BOMあり
-							cs = cs + "[BOM]";
+							cs = cs + "(BOM)";
 						}
 					}
 				}
 
 				InputStream is3 = f.getContents();
 
-				sep= getLineSeparater(is3);
+				sep = getLineSeparater(is3);
 
 			} catch (CoreException e) {
 				LOGGER.error("", e);
@@ -189,9 +184,9 @@ public class AttrDecorator implements ILabelDecorator {
 
 			sep = sep.replaceAll("\r", "CR").replaceAll("\n", "LF");// 最適化する
 
-			String addText = " " + "【" + cs + "】" + sep;
+			String addText = " " + "[" + cs + "]" + sep;
 			text = text + addText;
-//			LOGGER.trace(text);
+			//			LOGGER.trace(text);
 
 			CacheValue cache = new CacheValue(localTimeStamp, addText);
 
@@ -204,28 +199,27 @@ public class AttrDecorator implements ILabelDecorator {
 		}
 	}
 
-    public static String getCharsetName(InputStream is) throws IOException {
-        UniversalDetector detector = new UniversalDetector(null);
+	public static String getCharsetName(InputStream is) throws IOException {
+		UniversalDetector detector = new UniversalDetector(null);
 
-        byte[] buf = new byte[4096];
+		byte[] buf = new byte[4096];
 
-        int nread;
-        while ((nread = is.read(buf)) > 0 && !detector.isDone()) {
-          detector.handleData(buf, 0, nread);
-        }
+		int nread;
+		while ((nread = is.read(buf)) > 0 && !detector.isDone()) {
+			detector.handleData(buf, 0, nread);
+		}
 
-        detector.dataEnd();
-        String detectedCharset = detector.getDetectedCharset();
+		detector.dataEnd();
+		String detectedCharset = detector.getDetectedCharset();
 
 		detector.reset();
 
 		return detectedCharset == null ? "ASCII" : detectedCharset;
 	}
 
-    public static String getLineSeparater(InputStream is) throws IOException {
+	public static String getLineSeparater(InputStream is) throws IOException {
 
-
-    	byte[] buf = new byte[4096];
+		byte[] buf = new byte[4096];
 
 		char prev = 0;
 
@@ -237,7 +231,6 @@ public class AttrDecorator implements ILabelDecorator {
 			for (int i = 0; i < buf.length; i++) {
 				byte b = buf[i];
 				char x = (char) b;
-
 
 				if (isLineSeparator(prev)) {
 
@@ -269,7 +262,6 @@ public class AttrDecorator implements ILabelDecorator {
 		return c == '\r' || c == '\n';
 	}
 
-
 	public static String getMemoryInfo() {
 		String info = "";
 
@@ -294,20 +286,20 @@ public class AttrDecorator implements ILabelDecorator {
 		return info;
 	}
 
-    public void addListener(ILabelProviderListener listener) {
-        // noop
-    }
+	public void addListener(ILabelProviderListener listener) {
+		// noop
+	}
 
-    public void dispose() {
-        // noop
-    }
+	public void dispose() {
+		// noop
+	}
 
-    public boolean isLabelProperty(Object element, String property) {
-        return true;
-    }
+	public boolean isLabelProperty(Object element, String property) {
+		return true;
+	}
 
-    public void removeListener(ILabelProviderListener listener) {
-        // noop
-    }
+	public void removeListener(ILabelProviderListener listener) {
+		// noop
+	}
 
 }
