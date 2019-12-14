@@ -1,6 +1,8 @@
 
 # Show Text Attr
 
+![スクショ](https://github.com/inosn7bc/showTextAttr/blob/master/docs/showTextAttr_image01.png)
+
 ## 概要
 
 Show Text Attrは，Eclipseのプラグインです。
@@ -11,6 +13,3 @@ Eclipse 4.3以上
 
 ## インストール方法
 `新規ソフトウェアのインストール` からインストールしてください。
-
-## スクリーンショット
-![スクショ](https://github.com/inosn7bc/showTextAttr/blob/master/docs/showTextAttr_image01.png)
