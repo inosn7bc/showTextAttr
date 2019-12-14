@@ -12,5 +12,5 @@ Eclipse 4.3以上
 ## インストール方法
 `新規ソフトウェアのインストール` からインストールしてください。
 
-## イメージ
-
+## スクリーンショット
+![スクショ](https://github.com/inosn7bc/showTextAttr/blob/master/docs/showTextAttr_image01.png)
