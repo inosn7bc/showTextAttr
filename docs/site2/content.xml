@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?metadataRepository version='1.2.0'?>
+<repository name='更新サイト' type='org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository' version='1'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1576377434078'/>
+    <property name='p2.compressed' value='true'/>
+  </properties>
+  <units size='3'>
+    <unit id='showTextAttr' version='1.0.0.2--dxrh--7735K575C559G'>
+      <properties size='2'>
+        <property name='org.eclipse.equinox.p2.name' value='showTextAttr'/>
+        <property name='org.eclipse.equinox.p2.type.category' value='true'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='showTextAttr' version='1.0.0.2--dxrh--7735K575C559G'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='ShowTextAttrFeature.feature.group' range='[1.0.0.201912151137,1.0.0.201912151137]'/>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+    </unit>
+    <unit id='ShowTextAttrFeature.feature.group' version='1.0.0.201912151137' singleton='false'>
+      <update id='ShowTextAttrFeature.feature.group' range='[0.0.0,1.0.0.201912151137)' severity='0'/>
+      <properties size='4'>
+        <property name='org.eclipse.equinox.p2.name' value='ShowTextAttrFeature'/>
+        <property name='org.eclipse.equinox.p2.description' value='[フィーチャー]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+        <property name='org.eclipse.equinox.p2.type.group' value='true'/>
+      </properties>
+      <provides size='1'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='ShowTextAttrFeature.feature.group' version='1.0.0.201912151137'/>
+      </provides>
+      <requires size='1'>
+        <required namespace='org.eclipse.equinox.p2.iu' name='ShowTextAttrFeature.feature.jar' range='[1.0.0.201912151137,1.0.0.201912151137]'>
+          <filter>
+            (org.eclipse.update.install.features=true)
+          </filter>
+        </required>
+      </requires>
+      <touchpoint id='null' version='0.0.0'/>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [ライセンス]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Copyright]
+      </copyright>
+    </unit>
+    <unit id='ShowTextAttrFeature.feature.jar' version='1.0.0.201912151137'>
+      <properties size='3'>
+        <property name='org.eclipse.equinox.p2.name' value='ShowTextAttrFeature'/>
+        <property name='org.eclipse.equinox.p2.description' value='[フィーチャー]'/>
+        <property name='org.eclipse.equinox.p2.description.url' value='http://www.example.com/description'/>
+      </properties>
+      <provides size='3'>
+        <provided namespace='org.eclipse.equinox.p2.iu' name='ShowTextAttrFeature.feature.jar' version='1.0.0.201912151137'/>
+        <provided namespace='org.eclipse.equinox.p2.eclipse.type' name='feature' version='1.0.0'/>
+        <provided namespace='org.eclipse.update.feature' name='ShowTextAttrFeature' version='1.0.0.201912151137'/>
+      </provides>
+      <filter>
+        (org.eclipse.update.install.features=true)
+      </filter>
+      <artifacts size='1'>
+        <artifact classifier='org.eclipse.update.feature' id='ShowTextAttrFeature' version='1.0.0.201912151137'/>
+      </artifacts>
+      <touchpoint id='org.eclipse.equinox.p2.osgi' version='1.0.0'/>
+      <touchpointData size='1'>
+        <instructions size='1'>
+          <instruction key='zipped'>
+            true
+          </instruction>
+        </instructions>
+      </touchpointData>
+      <licenses size='1'>
+        <license uri='http://www.example.com/license' url='http://www.example.com/license'>
+          [ライセンス]
+        </license>
+      </licenses>
+      <copyright uri='http://www.example.com/copyright' url='http://www.example.com/copyright'>
+        [Copyright]
+      </copyright>
+    </unit>
+  </units>
+</repository>
