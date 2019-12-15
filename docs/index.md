@@ -15,7 +15,7 @@ Eclipse 4.3以上
 `新規ソフトウェアのインストール` から以下のURLを指定してインストールしてください。
 `https://inosn7bc.github.io/showTextAttr/update`
 
-または `https://inosn7bc.github.io/showTextAttr/shotTextAttr.jar` を
+または `https://inosn7bc.github.io/showTextAttr/showTextAttr.jar` を
 `dropin`に格納してください。
 
 
