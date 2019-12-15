@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<site>
-   <feature url="features/org.inosn7bc.showtextattr.feature_1.0.0.201912122333.jar" id="org.inosn7bc.showtextattr.feature" version="1.0.0.201912122333">
-      <category name="showTextAttr"/>
-   </feature>
-   <category-def name="showTextAttr" label="showTextAttr"/>
-</site>
