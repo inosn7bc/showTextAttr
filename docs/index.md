@@ -12,4 +12,16 @@ Show Text Attrは，Eclipseのプラグインです。
 Eclipse 4.3以上
 
 ## インストール方法
-`新規ソフトウェアのインストール` からインストールしてください。
+`新規ソフトウェアのインストール` から以下のURLを指定してインストールしてください。
+`https://inosn7bc.github.io/showTextAttr/update`
+
+または `https://inosn7bc.github.io/showTextAttr/shotTextAttr.jar` を
+`dropin`に格納してください。
+
+
+## 連絡など
+`inosn7bcあっとgmailどっとこむ`
+
+## TODO
+
+### ファイルタイプの指定
