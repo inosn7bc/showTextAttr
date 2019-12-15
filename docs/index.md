@@ -1,7 +1,7 @@
 
 # Show Text Attr
 
-![スクショ](https://raw.githubusercontent.com/inosn7bc/showTextAttr/master/docs/showTextAttr_image01.png)
+![スクショ](https://raw.githubusercontent.com/inosn7bc/showTextAttr/master/docs/showTextAttr_image02.png)
 
 ## 概要
 
