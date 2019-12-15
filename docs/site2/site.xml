@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/ShowTextAttrFeature_1.0.0.201912151137.jar" id="ShowTextAttrFeature" version="1.0.0.201912151137">
+      <category name="showTextAttr"/>
+   </feature>
+   <category-def name="showTextAttr" label="showTextAttr"/>
+</site>
