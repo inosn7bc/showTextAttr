@@ -17,7 +17,7 @@ Eclipse 4.3以上
 `https://inosn7bc.github.io/showTextAttr/update`
 
 または [ShowTextAttr.jar](https://inosn7bc.github.io/showTextAttr/ShowTextAttr.jar) を
-`dropin`に格納してください。
+`dropins`に格納してください。
 
 ## 連絡など
 `inosn7bcあっとgmailどっとこむ`
